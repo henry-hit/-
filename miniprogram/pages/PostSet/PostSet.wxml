@@ -1,0 +1,104 @@
+<!--miniprogram/pages/StuChargeDetail/StuChargeDetail.wxml-->
+<van-tabs animated sticky color="#0b988f" active="{{ active }}" bind:change="onChange">
+  <van-tab title="课程内容区">
+      <!-- changed!!!!!!!!!!!!!! -->
+      <navigator url="/pages/PageDetail/PageDetail?post={{item._id}}" wx:for="{{post_course_top}}" >
+      <view class="oneBlock">
+          <view><van-tag plain wx:if="{{item.top}}" class="tag" type="danger">置顶</van-tag>{{item.title}}</view>
+          <view class="time">{{item.lastModifiedTime+" "}}
+            <van-tag class="tag" wx:if="{{item.solved}}" type="success">已解决</van-tag>
+            <van-tag class="tag" wx:else type="danger">未解决</van-tag>
+          </view>
+        </view>
+      </navigator>
+      <!-- changed!!!!!!!!!!!!!! -->
+
+      <navigator url="/pages/PageDetail/PageDetail?post={{item._id}}" wx:for="{{post_course}}" >
+      <view class="oneBlock">
+          <view><van-tag plain wx:if="{{item.top}}" class="tag" type="danger">置顶</van-tag>{{item.title}}</view>
+          <view class="time">{{item.lastModifiedTime+" "}}
+            <van-tag class="tag" wx:if="{{item.solved}}" type="success">已解决</van-tag>
+            <van-tag class="tag" wx:else type="danger">未解决</van-tag>
+          </view>
+        </view>
+      </navigator>
+
+  </van-tab>
+
+
+  <van-tab title="实验区">
+      <!-- changed!!!!!!!!!!!!!! -->
+    <navigator url="/pages/PageDetail/PageDetail?post={{item._id}}" wx:for="{{post_experiment_top}}" >
+      <view class="oneBlock">
+          <view><van-tag plain wx:if="{{item.top}}" class="tag" type="danger">置顶</van-tag>{{item.title}}</view>
+          <view class="time">{{item.lastModifiedTime+" "}}
+            <van-tag class="tag" wx:if="{{item.solved}}" type="success">已解决</van-tag>
+            <van-tag class="tag" wx:else type="danger">未解决</van-tag>
+          </view>
+        </view>
+      </navigator>
+      <!-- changed!!!!!!!!!!!!!! -->
+
+      <navigator url="/pages/PageDetail/PageDetail?post={{item._id}}" wx:for="{{post_experiment}}" >
+      <view class="oneBlock">
+          <view><van-tag plain wx:if="{{item.top}}" class="tag" type="danger">置顶</van-tag>{{item.title}}</view>
+          <view class="time">{{item.lastModifiedTime+" "}}
+            <van-tag class="tag" wx:if="{{item.solved}}" type="success">已解决</van-tag>
+            <van-tag class="tag" wx:else type="danger">未解决</van-tag>
+          </view>
+        </view>
+      </navigator>
+  </van-tab>
+
+  <van-tab title="作业区">
+      <!-- changed!!!!!!!!!!!!!! -->
+    <navigator url="/pages/PageDetail/PageDetail?post={{item._id}}" wx:for="{{post_homework_top}}" >
+      <view class="oneBlock">
+          <view><van-tag plain wx:if="{{item.top}}" class="tag" type="danger">置顶</van-tag>{{item.title}}</view>
+          <view class="time">{{item.lastModifiedTime+" "}}
+            <van-tag class="tag" wx:if="{{item.solved}}" type="success">已解决</van-tag>
+            <van-tag class="tag" wx:else type="danger">未解决</van-tag>
+          </view>
+        </view>
+      </navigator>
+      <!-- changed!!!!!!!!!!!!!! -->
+
+      <navigator url="/pages/PageDetail/PageDetail?post={{item._id}}" wx:for="{{post_homework}}" >
+      <view class="oneBlock">
+          <view><van-tag plain wx:if="{{item.top}}" class="tag" type="danger">置顶</van-tag>{{item.title}}</view>
+          <view class="time">{{item.lastModifiedTime+" "}}
+            <van-tag class="tag" wx:if="{{item.solved}}" type="success">已解决</van-tag>
+            <van-tag class="tag" wx:else type="danger">未解决</van-tag>
+          </view>
+        </view>
+      </navigator>
+   </van-tab>
+
+  <van-tab title="精华区">
+      <!-- changed!!!!!!!!!!!!!! -->
+
+    <navigator url="/pages/PageDetail/PageDetail?post={{item._id}}" wx:for="{{post_other_top}}" >
+      <view class="oneBlock">
+          <view><van-tag plain wx:if="{{item.top}}" class="tag" type="danger">置顶</van-tag>{{item.title}}</view>
+          <view class="time">{{item.lastModifiedTime+" "}}
+            <van-tag class="tag" wx:if="{{item.solved}}" type="success">已解决</van-tag>
+            <van-tag class="tag" wx:else type="danger">未解决</van-tag>
+          </view>
+        </view>
+      </navigator>
+      <!-- changed!!!!!!!!!!!!!! -->
+
+      <navigator url="/pages/PageDetail/PageDetail?post={{item._id}}" wx:for="{{post_other}}" >
+      <view class="oneBlock">
+          <view><van-tag plain wx:if="{{item.top}}" class="tag" type="danger">置顶</van-tag>{{item.title}}</view>
+          <view class="time">{{item.lastModifiedTime+" "}}
+            <van-tag class="tag" wx:if="{{item.solved}}" type="success">已解决</van-tag>
+            <van-tag class="tag" wx:else type="danger">未解决</van-tag>
+          </view>
+        </view>
+      </navigator>
+  </van-tab>
+</van-tabs>
+
+
+

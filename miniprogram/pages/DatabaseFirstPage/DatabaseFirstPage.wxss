@@ -1,0 +1,13 @@
+/* miniprogram/pages/DatabaseFirstPage/DatabaseFirstPage.wxss */
+.choice{
+  background-color: teal;
+  width: 100%;
+  border-radius: 10rpx;
+}
+.gridTitle{
+  font-weight: 1000;
+  line-height: 46rpx;
+}
+button{
+  color: white;
+}

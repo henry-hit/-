@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "van-panel": "@vant/weapp/panel/index",
+    "van-tag": "@vant/weapp/tag/index"
+  },
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "我的关注",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light"
+}

@@ -1,0 +1,38 @@
+<!-- <mp-dialog title="test" show="{{true}}" bindbuttontap="tapDialogButton" buttons="{{[{text: '取消'}, {text: '确认'}]}}">
+    <view>test content</view>
+</mp-dialog> -->
+<!-- <van-panel title="什么是索引" desc="数据库还没预习，老铁们救命啊啊啊啊啊哦啊啊啊啊救命啊" status="已解决">
+</van-panel>
+<van-panel title="体系结构实验二" desc="体系结构实验二怎么写？完全不会啊！" status="未解决" class="van-multi-ellipsis--l2">
+</van-panel> -->
+<!-- <navigator url="/pages/PageDetail/PageDetail?post={{item.post_id}}" wx:for="{{reply}}" wx:key="index">
+  <van-panel title="{{item.reply_to_post[0].title}}" desc="{{item.content}}" status="未解决" class="van-multi-ellipsis--l2">
+  </van-panel>
+</navigator> -->
+
+<!-- <navigator url="/pages/PageDetail/PageDetail?post={{item.post_id}}" class="wholePost" wx:for="{{reply}}" wx:key="index">
+  <view class="post">
+    <view class="header">
+      <van-tag wx:if="{{item.reply_to_post[0].solved}}"  type="success">已解决</van-tag>
+      <van-tag wx:else  type="danger">未解决</van-tag>
+      {{item.reply_to_post[0].title}}
+    </view>
+    <view class="time">{{item.reply_to_post[0].time}}</view>
+    <view class="content" style=" word-break: break-all;">
+      {{item.content}}
+    </view>
+  </view>
+</navigator> -->
+
+<view class="wholePost" wx:for="{{reply}}" wx:key="index">
+  <view class="post">
+    <navigator url="/pages/PageDetail/PageDetail?post={{item.post_id}}&replyId=r{{item._id}}" class="reply" style="word-break: break-all;">
+    <!-- 点击标题或内容都需要可以跳转 -->
+      你的回复：{{item.content}}
+    </navigator>
+    <navigator url="/pages/PageDetail/PageDetail?post={{item.post_id}}" class="post_title" style=" word-break: break-all; background:#F8F8FF;color:#808A87;border-radius: 4px;margin-top:10px;padding:10px">
+      原贴：{{item.reply_to_post[0].title}}  
+    </navigator>
+  </view>
+</view>
+

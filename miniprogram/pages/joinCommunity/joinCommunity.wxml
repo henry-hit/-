@@ -1,0 +1,9 @@
+<!--pages/joinCommunity/joinCommunity.wxml-->
+<view class="container">
+  <!-- <text>邀请码</text>
+      <textarea class="postDetail" placeholder="请输入课程社区对应邀请码" 
+      bindinput="invitation_code_input"></textarea> -->
+      <label>请输入课程社区邀请码（闲聊区：666）<input type="text" bindinput="invitation_code_input"></input></label>
+      <button bindtap="join_one" type='primary' size='large'>加入</button>
+
+</view>

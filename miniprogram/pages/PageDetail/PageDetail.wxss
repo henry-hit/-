@@ -1,0 +1,103 @@
+/* miniprogram/pages/PageDetail/PageDetail.wxss */
+.huifu{
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+}
+
+.post{
+  padding: 6% 4%;
+  background-color: white;
+  box-sizing: border-box;
+  margin-bottom: 5px;
+  position: sticky;
+  
+}
+.header{
+  font-weight: 600;
+  line-height: 26px;
+  
+}
+
+.operator{
+  margin-top: 30px ;
+  text-align: right;
+
+}
+
+.van-icon{
+  margin-right: 25px !important; 
+}
+
+.adminOperate{
+  flex: 1;
+}
+.studentOperate{
+  flex: 1;
+  text-align: right;
+}
+
+
+.content{
+  line-height: 20px;
+  font-size: 14px;
+
+}
+
+.time{
+  line-height: 20px;
+  font-size: 14px;
+  color: gray;
+  margin-bottom: 10px;
+}
+
+.van-tag{
+  margin-right: 4px !important;
+}
+
+
+.oneReply{
+  background-color: white;
+  margin-bottom: 3px;
+  display: flex;
+  box-sizing: border-box;
+  padding: 4% 4%;
+}
+.touxiang{
+ 
+}
+
+.replyInfo{
+  flex: 1;
+  box-sizing: border-box;
+  padding-left: 4px;
+  
+}
+
+.name{
+  height: 1.5rem;
+}
+
+.floor{
+  color: grey;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.replyContent{
+
+}
+
+.wholePost{
+  margin-bottom: 100px;
+}
+
+.van-field{
+  background-color: lightgray;
+}
+
+.replyOperator{
+  box-sizing: border-box;
+  padding: 0px 10px;
+  text-align: right;
+}

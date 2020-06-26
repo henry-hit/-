@@ -1,0 +1,11 @@
+/* pages/personalReply/personalReply.wxss */
+.post{
+  padding: 6% 4%;
+  background-color: white;
+  box-sizing: border-box;
+  margin-bottom: 5px;
+  position: sticky;
+}
+.reply{
+  line-height: 26px;
+}

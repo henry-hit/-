@@ -1,0 +1,99 @@
+<!--贴子标题 发帖人 正文 贴子状态-->
+<view class="wholePost">
+  <view class="post">
+    <view class="header">
+      <van-tag plain type="danger" wx:if="{{top}}">置顶</van-tag>
+      <van-tag wx:if="{{solved}}"  type="success">已解决</van-tag>
+      <van-tag wx:else  type="danger">未解决</van-tag>
+      {{post.title}}
+    </view>
+    <view class="time">{{post.time}}</view>
+    <view class="content" style=" word-break: break-all;">
+      {{post.content}}
+    </view>
+    <view class="operator">
+    <!-- name="https://6869-hitsz-raubs-1302289355.tcb.qcloud.la/firstPageIcon/delete.png?sign=176c3352ac32f4d99b0907413e7ed986&t=1592664430 -->
+        <van-icon wx:if="{{status == 'admin' }}" size="30px" bind:click="deletePost" name="../../../../img/pageDetail/delete.png"/>
+        <van-icon wx:if="{{(status == 'admin') && (top)}}" size="30px" bind:click="zhiding" name="../../../../img/pageDetail/top.png"/>
+        <van-icon wx:elif="{{(status == 'admin') && (!top)}}" size="30px" bind:click="zhiding" name="../../../../img/pageDetail/cancelTop.png"/>
+        
+      
+        <van-icon size="30px" bind:click="showPopup" name="../../../../img/pageDetail/changeStatus.png"/>
+        <van-icon size="30px" wx:if="{{guanzhu}}" bind:click="guanzhu" name="../../../../img/pageDetail/star.png"/>
+        <van-icon size="30px" wx:else bind:click="guanzhu" name="../../../../img/pageDetail/unStar.png"/>
+    </view>
+ </view>
+
+  <view wx:for="{{reply_to_post}}" wx:key="index" class="oneReply">
+      <view class="touxiang">
+        <van-image
+          round
+          fit="cover"
+          width="3rem"
+          height="3rem"
+          src="{{item.avatarUrl}}"
+        />
+      </view>
+      <view class="replyInfo" style="word-break: break-all;">
+        <view class="name">{{item.name}}</view>
+        <view class="floor">{{index+1}}楼 | {{item.date}}</view>
+        <view class="replyContent"><text>{{item.content}}</text></view>
+        <view class="replyOperator">
+          <!-- <van-icon size="20px" name="https://6869-hitsz-raubs-1302289355.tcb.qcloud.la/pageDetail/%E5%9B%9E%E5%A4%8D.png?sign=41df5da3ccbf63ab75c89e572957add1&t=1593067317"/> -->
+          <!-- <image size="20px" wx:if="{{item.mark}}" src="https://6869-hitsz-raubs-1302289355.tcb.qcloud.la/pageDetail/%E7%81%AF%E6%B3%A1_%E4%BA%AE.png?sign=52e6964903d65046f2721ef2931c094b&t=1593066886" mark="{{item.mark}}" reply_id="{{item._id}}" index="{{index}}" bindtap="addScore"></image>
+          <image size="20px" wx:else name="https://6869-hitsz-raubs-1302289355.tcb.qcloud.la/pageDetail/%E7%81%AF%E6%B3%A1_%E4%B8%8D%E4%BA%AE%20.png?sign=b6ae37edf894a8356bcbc0eb7fa9ec7f&t=1593066818" mark="{{item.mark}}" reply_id="{{item._id}}" index="{{index}}" bindtap="addScore"></image> -->
+          <van-icon size="20px" wx:if="{{item.mark}}" name="../../../../img/pageDetail/mark.png" data-mark="{{item.mark}}" data-reply_id="{{item._id}}" data-index="{{index}}" bind:click="addScore"/>
+          <van-icon size="20px" wx:else name="../../../../img/pageDetail/unMark.png" data-mark="{{item.mark}}" data-reply_id="{{item._id}}" data-index="{{index}}" bind:click="addScore" />
+        </view>
+      </view>
+      
+        <!-- <van-cell title="{{item._openid}}" value="{{index+1}}" label="{{item.content}}" border="{{ false }}" /> -->
+      
+        <!-- 楼中楼部分 -->
+        <!-- <van-cell wx:for="{{item.reply}}" wx:for-index="replyIndex" wx:for-item="replyItem" wx:key="replyIndex" title="{{replyItem._openid}}" label="{{replyItem.content}}" border="{{ false }}" /> -->
+    
+  </view>
+</view>
+
+
+ 
+
+
+<view class="huifu">
+ <!--匿名/非匿名 popup -->
+ <view>
+    <van-dropdown-menu direction="up">
+    <van-dropdown-item bind:change="changeNiming" value="{{ value2 }}" options="{{ option2 }}" />
+    </van-dropdown-menu>
+  </view>
+  <!-- 回复内容 -->
+  <van-cell-group>
+  <van-field
+    value="{{ content }}"
+    border="{{ false }}"
+    autosize
+    type="textarea"
+    bind:change="onChange">
+  <van-button slot="button" size="small" type="primary" bindtap="reply_one">发送</van-button>
+   </van-field> 
+  </van-cell-group>
+</view>
+
+<!-- value="{{replyIndex+1}}" -->
+
+<!-- <van-cell-group>
+  <van-cell title="陈昕" value="2楼" label="同上" border="{{ false }}" />
+</van-cell-group>
+</van-panel>
+
+
+
+ -->
+<!-- 回复输入框 -->
+
+<van-popup show="{{show}}" round closable position="top" bind:close="onClose">
+  <van-row>
+    <van-col span="12"><van-button type="primary" size="large" block bind:click="notResolved">未解决</van-button></van-col>
+    <van-col span="12"><van-button type="primary" size="large" block bind:click="resolved">已解决</van-button></van-col>
+  </van-row>
+</van-popup> 

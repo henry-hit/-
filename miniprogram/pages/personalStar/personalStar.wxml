@@ -1,0 +1,24 @@
+<!--pages/personalStar/personalStar.wxml-->
+<!-- <van-panel wx:for="{{star}}" wx:key="index" title="{{item.star_to_post[0].title}}" desc="{{item.star_to_post[0].content}}" status="未解决" class="van-multi-ellipsis--l2">
+</van-panel> -->
+
+<!-- <navigator url="/pages/PageDetail/PageDetail?post={{item._id}}" wx:for="{{star}}" wx:key="index">
+  <view class="oneBlock">
+    <view>{{item.title}}</view>
+    <view class="time">{{item.lastModifiedTime+" "}}<van-tag class="tag" type="success"></van-tag></view>
+  </view>
+</navigator> -->
+
+<navigator url="/pages/PageDetail/PageDetail?post={{item.star_to_post[0]._id}}" class="wholePost" wx:for="{{star}}" wx:key="index">
+  <view class="post">
+    <view class="header">
+      <van-tag wx:if="{{item.star_to_post[0].solved}}"  type="success">已解决</van-tag>
+      <van-tag wx:else  type="danger">未解决</van-tag>
+      {{item.star_to_post[0].title}}
+    </view>
+    <view class="time">{{item.star_to_post[0].time}}</view>
+    <view class="content" style=" word-break: break-all;">
+      {{item.star_to_post[0].content}}
+    </view>
+  </view>
+</navigator>
